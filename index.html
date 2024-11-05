@@ -1,0 +1,35 @@
+<script>
+	let name = ""
+  let email = "";
+  let message = "";
+	
+  $: prefilledLink = `https://docs.google.com/forms/d/e/1FAIpQLSfmSZif4GDstMLnMKc35fVDJ9SoHDkmMUhr-_0fvVZBH4TKyw/formResponse?usp=pp_url&entry.1916444399=${name}&entry.1454621435=${email}&entry.827655478=${message}&submit=Submit`;
+</script>
+
+<label>Name
+	<input type="name" placeholder="Ashok Patel" bind:value="{name}" />
+</label>
+<label>Email
+	<input type="email" placeholder="name@email.com" bind:value="{email}" />
+</label>
+<label>Message
+	<textarea placeholder="Hi, I'm..." bind:value="{message}" />
+</label>
+<a href="{prefilledLink}" target="_blank"><button>Submit</button></a>
+
+<pre>{prefilledLink}</pre>
+
+<style>
+	label {
+		display: grid;
+		max-width: 600px;
+		margin-top: 0.25rem;
+	}
+	input, textarea {
+		margin-top: 5px;
+	}
+	pre {
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+</style>
